@@ -63,7 +63,7 @@ export default function BottomNavigationQuizz({recap, next, submit, state, alter
        {answer != undefined && <p>The answer was {answer[0]}</p>}
        </div>
        <div className='d-flex justify-content-between'>
-       <Button color="secondary"  size="md" >Learn more</Button>
+       <a target="_blank" href={"https://commons.wikimedia.org/wiki/" + answer[1] } ><Button color="secondary"  size="md" >Learn more</Button></a>
        <Button color="primary"   size="md" onClick={handleNextQuestion} >Next question</Button>
        </div>
      

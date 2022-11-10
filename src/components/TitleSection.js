@@ -3,12 +3,9 @@ import QuizzProgress from './QuizzProgress'
 import { Container } from 'reactstrap'
 
 export default function TitleSection({ongoingQuizz, progress, target}) {
-
-
-  // j'ai 5 questions je vais à reculons 
   return (
 
-        <Container className={"bg-white text-black mb-3 pb-1"}>
+        <Container fluid className={"bg-white text-black mb-3 pb-1 bg-content"}>
             {ongoingQuizz &&
             <div>
                     <QuizzProgress questionNumb={progress} questionTarget={target} val={5}/>

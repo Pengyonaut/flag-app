@@ -170,22 +170,16 @@ const checkRemainingQuestions = () => {
     <>
           <TitleSection ongoingQuizz={true} progress={questionNumb} target={config.questionNumber}/>
 
-      <Container className="m-0 p-0">
+      <Container fluid className="m-0 p-0" style={{height:"90vh"}}>
         <FlagDisplay flagUrl={flag} flagSize={"60vw"}/>
 
 {prompt  != undefined && 
 <>
 <QuizzProposition answerState={answerState} data={prompt.response} click={handleClick} state={btn} alter={setBtn}/>
-
-
    </>
 }
 
-
-
 {recap && <CountryRecap config={config} wikiDoc={wikiDoc} demographics={demographics}/>}
-
-
 
 {!modal && <BottomNavigationQuizz answerState={answerState} changeAnswerState={setAnswerState} next={fetchImage} recap={setRecap} answer={[prompt.answer.en, userAnswer]} submit={submit} state={btn} alter={setBtn}/>}
 

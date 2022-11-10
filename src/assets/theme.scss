@@ -1,18 +1,19 @@
 $primary: #0454b6;
 $secondary: #959fa4;
-$success: #04b041;
+$success: #00bf7b;
 $info:  #08bcff;
-$warning: #ff7e00;
-$danger: #ea2222;
+$warning: #f6b54a;
+$danger: #ef6030;
 $link: #ffffff;
 $light: #666;
 $dark: #222222;
 
 
-$main-color: lighten(#222, 5%);
+$main-color: lighten(#1d100e, 5%);
 $font-color: #ffffff;
 
-$body-color: #F2F2F2;
+$body-color: #00f9cf;
+$content-color: #00f9cf;
 
 $link-color: darken($font-color, 30%);
 
@@ -37,3 +38,9 @@ $close-color: $font-color;
 $table-border-color: $border-color;
 $table-dark-border-color: $table-border-color;
 $table-dark-color: $font-color;
+
+
+
+.bg-content {
+    background: $content-color;
+}
