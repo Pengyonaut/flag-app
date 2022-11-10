@@ -6,9 +6,6 @@ import { Col, Row } from 'reactstrap'
 
 export default function Demographics({data}) {
 
-
-    console.log(data)
-
   return (
     <>
     <div className='w-100 mt-3 p-2'>

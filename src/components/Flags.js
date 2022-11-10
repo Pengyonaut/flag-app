@@ -35,7 +35,7 @@ export default function Flags() {
 
 
 const [userAnswer, setUserAnswer] = useState()
-const [flag, setFlag] = useState();
+const [flag, setFlag] = useState(null);
 const [prompt, setPrompt] = useState({response: [], answer: ""})
 const [rightAnswer, setRightAnswer] = useState(0)
 const [wrongAnswer, setWrongAnswer] = useState(0)
@@ -44,7 +44,6 @@ const [wikiDoc, setWikiDoc] = useState("")
 const [btn, setBtn] = useState(null)
 const [recap,setRecap] = useState(false)
 const [answerState, setAnswerState] = useState(0)
-const [quizzAnswer, setQuizzAnswer] = useState([])
 const [modal, setModal] = useState(false)
 const [demographics, setDemographics] = useState({
   capital:"",
@@ -62,13 +61,14 @@ const [demographics, setDemographics] = useState({
 
 const fetchImage = async (source) => {
   let init = flagsList[Math.round(Math.random() * flagsList.length)]
-  const res = await fetch(`https://countryflagsapi.com/png/${init.alpha3}`);
-  const imageBlob = await res.blob();
-  const imageObjectURL = URL.createObjectURL(imageBlob);
-  setFlag(imageObjectURL)
-  promptCreation(init);
+  fetch("https://restcountries.com/v2/name/" + init.en).then(function(resp) {
+      return resp.json()
+  }).then(function(data) {
+    setFlag(data[0].flag, () => console.log(flag))
+    console.log(flag)
+    promptCreation(init)
+  })
 };
-
 
 
   const promptCreation = (init) => {
@@ -109,8 +109,6 @@ const queryCountry = async () => {
       lat: data[0].latlng[0],
       lng: data[0].latlng[1]
      });
-
-     console.log(demographics)
    
   })
 }
